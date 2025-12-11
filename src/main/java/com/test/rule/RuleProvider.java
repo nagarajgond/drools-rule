@@ -16,7 +16,7 @@ public class RuleProvider {
         Channel channel = new Channel();
         channel.setChannel("WEB");
         unit.getChannels().add(channel);
-        unit.getFacts().add(new DroolsFact("device.ip.current.value.address", "1.1.1.1", String.class));
+        unit.getFacts().add(new DroolsFact("address", "1.1.1.1", String.class));
 
         try (RuleUnitInstance<RuleUnitData> instance = ruleLoader.newInstance(unit)) {
             instance.fire();
